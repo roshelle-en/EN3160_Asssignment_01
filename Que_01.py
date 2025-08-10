@@ -21,15 +21,14 @@ lut = np.concatenate((lut, segment5), axis=0).astype('uint8')
 
 plt.figure(figsize=(10, 4))
 
-
 plt.subplot(131)
 plt.plot(lut)
 plt.title("Transformation Curve")
 plt.xlim([0, 255])
 plt.ylim([0, 255])
+plt.xticks([0, 50, 100, 150, 200, 250])  # Set specific x-axis ticks
 plt.xlabel('Input intensity')
 plt.ylabel('Output intensity')
-
 
 original_image = cv.imread('emma.jpg', cv.IMREAD_GRAYSCALE)
 
@@ -37,7 +36,6 @@ plt.subplot(132)
 plt.imshow(original_image, cmap="gray")
 plt.title('Original')
 plt.axis('off')
-
 
 transformed_image = cv.LUT(original_image, lut)
 
