@@ -10,7 +10,7 @@ if img_orig is None:
 img_color = cv.cvtColor(img_orig, cv.COLOR_BGR2RGB)
 img_lab = cv.cvtColor(img_orig, cv.COLOR_BGR2Lab)# Convert to RGB and Lab color spaces
 l, a, b = cv.split(img_lab)
-gamma = 0.78
+gamma = 0.75
 table = np.array([(i/255.0)**(gamma)*255.0 for i in np.arange(0, 256)]).astype('uint8')# Apply gamma correction to L channel
 l_gamma_corrected = cv.LUT(l, table)
 img_gamma_merge = cv.merge((l_gamma_corrected, a, b)) # Merge corrected L channel with original a and b channels
