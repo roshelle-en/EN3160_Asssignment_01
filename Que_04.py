@@ -8,7 +8,8 @@ if spider is None:
 
 spider_rgb = cv.cvtColor(spider, cv.COLOR_BGR2RGB)
 Hue, Saturation, Value = cv.split(cv.cvtColor(spider, cv.COLOR_BGR2HSV))
-a = 0.65, sigma = 70.0 
+a = 0.65
+sigma = 70.0 
 x = np.arange(0, 256) # Transformation function for Saturation channel
 function = np.minimum(x + a * 128 * np.exp(-((x - 128)**2) / (2 * sigma**2)), 255).astype('uint8')
 S_transformed = cv.LUT(Saturation, function)
