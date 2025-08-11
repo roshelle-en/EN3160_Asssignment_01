@@ -38,8 +38,8 @@ ssd_nn = compute_norm_SSD(original_image, upscaled_nn)
 ssd_bilinear = compute_norm_SSD(original_image, upscaled_bilinear)
 
 # Print SSD results
-print(f"Normalized SSD for Nearest Neighbor interpolation: {ssd_nn:.3f}")
-print(f"Normalized SSD for Bilinear interpolation: {ssd_bilinear:.3f}")
+print(f" SSD for Nearest Neighbor interpolation: {ssd_nn:.3f}")
+print(f" SSD for Bilinear interpolation: {ssd_bilinear:.3f}")
 
 
 fig, axes = plt.subplots(1, 2, figsize=(12, 8))
