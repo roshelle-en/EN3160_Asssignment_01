@@ -22,8 +22,8 @@ def compute_norm_SSD(image1, image2):
     return np.sum((image1 - image2)**2) / float(image1.size)
 
 
-original_image = cv.imread('im01.png')
-small_image = cv.imread('im01small.png')
+original_image = cv.imread('im02.png')
+small_image = cv.imread('im02small.png')
 
 
 assert original_image is not None, "Original image not found"
@@ -38,8 +38,8 @@ ssd_nn = compute_norm_SSD(original_image, upscaled_nn)
 ssd_bilinear = compute_norm_SSD(original_image, upscaled_bilinear)
 
 # Print SSD results
-print(f"Normalized SSD for Nearest Neighbor interpolation: {ssd_nn:.5f}")
-print(f"Normalized SSD for Bilinear interpolation: {ssd_bilinear:.5f}")
+print(f"Normalized SSD for Nearest Neighbor interpolation: {ssd_nn:.3f}")
+print(f"Normalized SSD for Bilinear interpolation: {ssd_bilinear:.3f}")
 
 
 fig, axes = plt.subplots(1, 2, figsize=(12, 8))
